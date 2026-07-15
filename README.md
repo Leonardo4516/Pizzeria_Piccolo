@@ -37,11 +37,11 @@ clientes ──< pedidos ──< detalle_pedido >── pizzas >── pizza_ing
 | Tabla | Descripción | Relaciones |
 |---|---|---|
 | `clientes` | Información del cliente: nombre, teléfono, dirección, correo | 1:N con `pedidos` |
-| `ingredientes` | Ingredientes con stock, estado y costo | N:M con `pizzas` a través de `pizza_ingredientes` |
+| `ingredientes` | Ingredientes con nombre, stock, estado y costo_ingrediente | N:M con `pizzas` a través de `pizza_ingredientes` |
 | `repartidores` | Repartidores: nombre, zona asignada, estado (disponible / no disponible) | 1:N con `domicilios` |
 | `pizzas` | Catálogo de pizzas: nombre, tamaño, precio base, tipo (vegetariana, especial, clásica) | N:M con `ingredientes`; 1:N con `detalle_pedido`; 1:N con `historial_precios` |
 | `pedidos` | Pedidos: cliente, fecha, método de pago (efectivo, tarjeta, app), estado (pendiente, preparacion, entregado, cancelado), total | N:1 con `clientes`; 1:N con `detalle_pedido`; 1:N con `domicilios` |
-| `pizza_ingredientes` | Relación N:M entre pizzas e ingredientes con cantidad de cada ingrediente por pizza | N:1 con `pizzas` e `ingredientes` |
+| `pizza_ingredientes` | Relación N:M entre pizzas e ingredientes (sin columna cantidad en la DDL; triggers la referencian como `cantidad_ingrediente`) | N:1 con `pizzas` e `ingredientes` |
 | `detalle_pedido` | Pizzas incluidas en cada pedido con cantidad | N:1 con `pedidos` y `pizzas` |
 | `domicilios` | Entregas a domicilio: repartidor, pedido, hora salida, hora entrega, distancia | N:1 con `repartidores` y `pedidos` |
 | `historial_precios` | Auditoría de cambios de precio de pizzas | N:1 con `pizzas` |
@@ -151,6 +151,7 @@ cat database.sql funciones.sql triggers.sql vistas.sql consultas.sql | mysql -u 
 
 ### Notas
 
-- El script `database.sql` incluye la creación de la base de datos `pizzeria_don_piccollo` con `DROP DATABASE` al inicio, por lo que eliminará cualquier versión previa.
+- El script `database.sql` crea la base de datos `pizzeria_don_piccollo` con `CREATE DATABASE IF NOT EXISTS`, por lo que no elimina versiones previas.
+- La tabla `ingredientes` se completa con las columnas `nombre` y `costo_ingrediente` mediante sentencias `ALTER TABLE` posteriores a su creación.
 - Las funciones, triggers y vistas se crean dentro de la base de datos `pizzeria_don_piccollo` mediante la instrucción `USE`.
 - Los datos de inserción incluidos en `database.sql` son datos de ejemplo para pruebas.
