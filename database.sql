@@ -1,4 +1,3 @@
-DROP DATABASE pizzeria_don_piccollo;
 CREATE DATABASE IF NOT EXISTS pizzeria_don_piccollo;
 USE pizzeria_don_piccollo;
 
