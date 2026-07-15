@@ -101,11 +101,11 @@ INSERT INTO repartidores (nombre, zona_asignada, estado) VALUES
 
 -- Ingredientes (Recuerda que agregamos costo_ingrediente)
 INSERT INTO ingredientes (stock, estado, costo_ingrediente, nombre) VALUES 
-(100, 'disponible', 500.00, 'Queso'), -- Queso
-(60, 'disponible', 800.00, 'Pepperoni'),  -- Pepperoni
-(40, 'disponible', 300.00, 'Masa'),  -- Masa
-(10, 'disponible', 400.00, 'Salsa'),  -- Salsa
-(50, 'disponible', 600.00, 'Champiñones');  -- Champiñones
+(100, 'disponible', 500.00, 'Queso'),
+(60, 'disponible', 800.00, 'Pepperoni'),
+(40, 'disponible', 300.00, 'Masa'),
+(10, 'disponible', 400.00, 'Salsa'),
+(50, 'disponible', 600.00, 'Champiñones');
 
 -- Pizzas
 INSERT INTO pizzas (nombre, tamaño, precio_base, tipo) VALUES 

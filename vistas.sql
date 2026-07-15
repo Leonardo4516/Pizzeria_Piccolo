@@ -24,7 +24,7 @@ GROUP BY re.nombre;
 
 -- DROP VIEW vista_rendimiento_repartidores;
 
--- SELECT * FROM vista_rendimiento_repartidores;
+SELECT * FROM vista_rendimiento_repartidores;
 
 -- 3. Vista de stock de ingredientes por debajo del mínimo permitido.
 -- El mínimo es 10

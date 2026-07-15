@@ -53,6 +53,7 @@ GROUP BY re.zona_asignada;
 SELECT cl.nombre, pe.total AS cantidad
 FROM clientes cl
 JOIN pedidos pe ON cl.id_cliente = pe.id_cliente
+GROUP BY cl.nombre
 HAVING pe.total >= 20000;
 
 SELECT *
