@@ -155,3 +155,8 @@ cat database.sql funciones.sql triggers.sql vistas.sql consultas.sql | mysql -u 
 - La tabla `ingredientes` se completa con las columnas `nombre` y `costo_ingrediente` mediante sentencias `ALTER TABLE` posteriores a su creación.
 - Las funciones, triggers y vistas se crean dentro de la base de datos `pizzeria_don_piccollo` mediante la instrucción `USE`.
 - Los datos de inserción incluidos en `database.sql` son datos de ejemplo para pruebas.
+
+
+## Evidencia de uso de herramientas
+
+<a href="https://ibb.co/9kcgpB36"><img src="https://i.ibb.co/dwjMfXJF/image.png" alt="image" border="0"></a>
